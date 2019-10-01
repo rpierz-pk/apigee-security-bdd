@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="3" name="BDD-Security-Testing">
+    <Basepaths>/bdd-security-testing</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1569961952161</CreatedAt>
+    <CreatedBy>rpierz@prokarma.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>BDD-Security-Testing</DisplayName>
+    <LastModifiedAt>1569961952161</LastModifiedAt>
+    <LastModifiedBy>rpierz@prokarma.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:0a151e1eae25f3aefd58b9063dcf89437ddb46c4efb3858e43edab6cd53eeaf980221d731e06f90c9fa4bc49ec307e13fab631415583ae87493539e1fa70cb83</ManifestVersion>
+    <Policies>
+        <Policy>Verify-API-Key</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://JavaScript-1.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints/>
+</APIProxy>
