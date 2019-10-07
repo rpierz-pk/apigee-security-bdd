@@ -10,24 +10,24 @@ pipeline {
 		stage('Initial-Checks'){
 			steps{
 				sendNotifications 'STARTED'
-				bat "npm -v"
-				bat "mvn -v"
+				sh "npm -v"
+				sh "mvn -v"
 				echo $apigeeUsername
 		}}
 		stage('Deploy to Production') {
 			steps {
 				//deploy using maven plugin
-				bat "mvn -f pom.xml install -Pprod -Dusername=${apigeeUsername} -Dpassword=${apigeePassword} -Dapigee.config.options=update"
+				sh "mvn -f bdd-security-app/pom.xml install -Pprod -Dusername=${apigeeUsername} -Dpassword=${apigeePassword} -Dapigee.config.options=update"
 			}
 		}
 		stage('Integration Tests') {
 			steps {
 				script {
-					bat "cd $WORKSPACE/test/integration && npm install"
-					bat "cd $WORKSPACE/test/integration && npm test"
+					sh "cd $WORKSPACE && npm install"
+					sh "cd $WORKSPACE && npm test"
 
-					bat "cd $WORKSPACE/test/integration && cp reports.json $WORKSPACE"
-					cucumber fileIncludePAttern: 'reports.json'
+					sh "cd $WORKSPACE && cp reports.json $WORKSPACE"
+					cucumber fileIncludePattern: 'reports.json'
 					build job: 'cucumber-report'
 				}
 			}
