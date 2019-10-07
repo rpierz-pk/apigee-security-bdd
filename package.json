@@ -2,6 +2,9 @@
   "name": "apigee-security-bdd",
   "version": "1.0.0",
   "description": "",
+  "dependencies": {
+    "apickli": "latest"
+  },
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js features/securitytest.feature"
@@ -15,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/rpierz-pk/apigee-security-bdd/issues"
   },
-  "homepage": "https://github.com/rpierz-pk/apigee-security-bdd#readme"
+  "homepage": "https://github.com/rpierz-pk/apigee-security-bdd#readme",
+  "devDependencies": {
+    "cucumber": "^6.0.1"
+  }
 }
