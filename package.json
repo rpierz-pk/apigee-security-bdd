@@ -1,0 +1,19 @@
+{
+  "name": "apigee-security-bdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js features/securitytest.feature"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rpierz-pk/apigee-security-bdd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rpierz-pk/apigee-security-bdd/issues"
+  },
+  "homepage": "https://github.com/rpierz-pk/apigee-security-bdd#readme"
+}
