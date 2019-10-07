@@ -1,9 +1,9 @@
 pipeline {
 	agent any
 	tools {
-		maven 'etc/maven'
-		jdk 'usr/bin/java'
-		nodejs 'NODEJS'
+		maven '/etc/maven'
+		jdk '/usr/bin/java'
+		nodejs '/usr/bin/nodejs'
 	}
 
 	stages {
