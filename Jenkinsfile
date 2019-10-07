@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	tools {
-		maven '/etc/maven'
+		maven '/usr/share/maven'
 		jdk '/usr/bin/java'
 	}
 
