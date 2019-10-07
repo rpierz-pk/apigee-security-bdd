@@ -8,7 +8,6 @@ pipeline {
 	stages {
 		stage('Initial-Checks'){
 			steps{
-				sendNotifications 'STARTED'
 				sh "npm -v"
 				sh "mvn -v"
 				echo $apigeeUsername
@@ -31,11 +30,5 @@ pipeline {
 				}
 			}
 		}
-	}
-
-	post {
-		always {
-			sendNotifications currentBuild.result
-		}
-	}
+  }
 }
