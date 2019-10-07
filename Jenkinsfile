@@ -1,8 +1,8 @@
 pipeline {
 	agent any
 	tools {
-		maven 'M2'
-		jdk 'JDK'
+		maven 'etc/maven'
+		jdk 'usr/bin/java'
 		nodejs 'NODEJS'
 	}
 
