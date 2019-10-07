@@ -4,7 +4,7 @@ Feature:
     Scenario: Verify API Key
         Given I set query parameters to
             | parameter   | value                            |
-            | apikey      | Oq25rBRefGBdtFM9gN4S9s5rFwXHETjq |
+            | apikey      | ${apikey}                        |
          When I GET /verifyapikey
          Then response code should be 200
 
@@ -16,7 +16,7 @@ Feature:
          Then response code should be 401
 
     Scenario: Authorize API Key
-        Given I have basic authentication credentials Oq25rBRefGBdtFM9gN4S9s5rFwXHETjq and dMgBQu9Gvorb95W3
+        Given I have basic authentication credentials ${apikey} and ${apisecret}
           And I set query parameters to
             | parameter  | value              |
             | grant_type | client_credentials |
@@ -63,6 +63,6 @@ Feature:
          Given I set User-Agent header to apickli
            And I set query parameters to
              | parameter | value                                 |
-             | apikey    | Oq25rBRefGBdtFM9gN4S9s5rFwXHETjq      |
+             | apikey    | ${apikey}                             |
           When I GET /logapikey
           Then response code should be 200
