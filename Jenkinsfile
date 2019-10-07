@@ -1,15 +1,18 @@
 pipeline {
 	agent any
 	tools {
-		maven '/usr/share/maven'
+		maven '/usr/bin/mvn'
 		jdk '/usr/bin/java'
 	}
 
 	stages {
 		stage('Initial-Checks'){
 			steps{
+        echo "Checking npm version"
 				sh "npm -v"
+        echo "Checking maven version"
 				sh "mvn -v"
+        echo "Echoing apigee username"
 				echo $apigeeUsername
 		}}
 		stage('Deploy to Production') {
