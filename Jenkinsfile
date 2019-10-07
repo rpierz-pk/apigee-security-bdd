@@ -27,7 +27,7 @@ pipeline {
 					bat "cd $WORKSPACE/test/integration && npm test"
 
 					bat "cd $WORKSPACE/test/integration && cp reports.json $WORKSPACE"
-					cucumber fileINcludePAttern: 'reports.json'
+					cucumber fileIncludePAttern: 'reports.json'
 					build job: 'cucumber-report'
 				}
 			}
