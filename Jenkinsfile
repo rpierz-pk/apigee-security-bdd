@@ -3,7 +3,6 @@ pipeline {
 	tools {
 		maven '/etc/maven'
 		jdk '/usr/bin/java'
-		nodejs '/usr/bin/nodejs'
 	}
 
 	stages {
