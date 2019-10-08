@@ -6,7 +6,7 @@
           <version>1.0</version>
           <relativePath>../shared-pom.xml</relativePath>
     </parent>
-    <modelVersion>1.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
     <groupId>com.prokarma</groupId>
     <artifactId>bdd-security-app</artifactId>
     <version>1.0</version>
