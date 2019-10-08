@@ -26,6 +26,7 @@ pipeline {
         writeFile(file: '$WORKSPACE/features/support/credentials/client-id.txt', text: "${CLIENT_USR}")
         
         echo "Storing Client Secret"
+        sh "touch $WORKSPACE/features/support/credentials/client-secret.txt"
         writeFile(file: '$WORKSPACE/features/support/credentials/client-secret.txt', text: "${CLIENT_PSW}")
       }
     }
