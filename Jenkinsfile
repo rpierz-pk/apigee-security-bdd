@@ -8,11 +8,8 @@ pipeline {
 	stages {
 		stage('Initial-Checks'){
 			steps{
-        echo "Checking npm version"
 				sh "npm -v"
-        echo "Checking maven version in $WORKSPACE. Java is at $JAVA_HOME"
 				sh "mvn -v"
-        echo "Echoing apigee username"
 				echo "${apigeeUsername}"
 		}}
 		stage('Deploy to Production') {
@@ -26,7 +23,6 @@ pipeline {
 				script {
           sh "rm -rf node_modules/*/.git/"
 					sh "cd $WORKSPACE && npm install"
-          sh "ls -l"
 					sh "cd $WORKSPACE && npm test"
 
 					sh "cd $WORKSPACE"
