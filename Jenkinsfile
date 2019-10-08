@@ -24,6 +24,7 @@ pipeline {
 		stage('Integration Tests') {
 			steps {
 				script {
+          sh "rm -rf node_modules/*/.git/"
 					sh "cd $WORKSPACE && npm install"
 					sh "cd $WORKSPACE && npm test"
 
