@@ -25,7 +25,7 @@ pipeline {
         echo "Storing Client Id"
         sh "touch $WORKSPACE/features/support/credentials/client-id.txt"
         writeFile file: '$WORKSPACE/features/support/credentials/client-id.txt', text: "${CLIENT_USR}"
-        sh "cat ${CLIENT_USR} > $WORKSPACE/features/support/credentials/client-id.txt"
+        sh "sudo cat ${CLIENT_USR} > $WORKSPACE/features/support/credentials/client-id.txt"
         echo "Storing Client Secret"
         sh "cat ${CLIENT_PSW} > $WORKSPACE/features/support/credentials/client-secret.txt"
 		  
