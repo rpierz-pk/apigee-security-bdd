@@ -22,6 +22,7 @@ pipeline {
         echo "$WORKSPACE"
         sh "mkdir $WORKSPACE/features/support/credentials"
         echo "Storing Client Id"
+        sh "touch $WORKSPACE/features/support/credentials/client-id.txt"
         sh "cat ${CLIENT_USR} > $WORKSPACE/features/support/credentials/client-id.txt"
         echo "Storing Client Secret"
         sh "cat ${CLIENT_PSW} > $WORKSPACE/features/support/credentials/client-secret.txt"
