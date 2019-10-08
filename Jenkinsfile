@@ -13,13 +13,12 @@ pipeline {
 			steps{
 				sh "npm -v"
 				sh "mvn -v"
-				echo "${apigeeUsername}"
+				echo "${APIGEE_USR}"
 		}}
 		stage('Deploy to Production') {
 			steps {
 				//deploy using maven plugin
-				sh "mvn -f bdd-security-app/pom.xml install -Pprod
--Dusername=${APIGEE_USR} -Dpassword=${APIGEE_PSW} -Dapigee.config.options=update"
+				sh "mvn -f bdd-security-app/pom.xml install -Pprod -Dusername=${APIGEE_USR} -Dpassword=${APIGEE_PSW} -Dapigee.config.options=update"
 			}
 		}
 		stage('Integration Tests') {
