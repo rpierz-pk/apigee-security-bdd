@@ -25,10 +25,12 @@ pipeline {
 			steps {
 				script {
           sh "rm -rf node_modules/*/.git/"
-					sh "cd $WORKSPACE && npm install"
+					sh "cd $WORKSPACE && npm install"i
+          sh "ls -l"
 					sh "cd $WORKSPACE && npm test"
 
-					sh "cd $WORKSPACE && cp reports.json $WORKSPACE"
+					sh "cd $WORKSPACE"
+          sh "cat reports.json"
 					cucumber fileIncludePattern: 'reports.json'
 					build job: 'cucumber-report'
 				}
