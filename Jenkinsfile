@@ -13,7 +13,7 @@ pipeline {
         echo "Checking maven version in $WORKSPACE. Java is at $JAVA_HOME"
 				sh "mvn -v"
         echo "Echoing apigee username"
-				echo $apigeeUsername
+				echo ${apigeeUsername}
 		}}
 		stage('Deploy to Production') {
 			steps {
