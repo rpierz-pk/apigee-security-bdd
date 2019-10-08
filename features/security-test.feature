@@ -1,10 +1,10 @@
 Feature:
     Test the Apigee proxy to make sure that it correctly utilizes Security policies
 
-    Scenario: Verify API Key
+  Scenario: Verify API Key
         Given I set query parameters to
             | parameter   | value                            |
-            | apikey      | ${apikey}                        |
+            | apikey      | `clientId`                             |
          When I GET /verifyapikey
          Then response code should be 200
 
@@ -16,7 +16,7 @@ Feature:
          Then response code should be 401
 
     Scenario: Authorize API Key
-        Given I have basic authentication credentials ${apikey} and ${apisecret}
+        Given I have basic authentication credentials `clientId` and `clientSecret`
           And I set query parameters to
             | parameter  | value              |
             | grant_type | client_credentials |
@@ -63,6 +63,6 @@ Feature:
          Given I set User-Agent header to apickli
            And I set query parameters to
              | parameter | value                                 |
-             | apikey    | ${apikey}                             |
+             | apikey    | `clientId`                             |
           When I GET /logapikey
           Then response code should be 200

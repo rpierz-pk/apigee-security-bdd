@@ -6,6 +6,7 @@ pipeline {
 	}
   environment {
     APIGEE = credentials('apigee')
+    CLIENT = credentials('client')
   }
 
 
@@ -16,6 +17,14 @@ pipeline {
 				sh "mvn -v"
 				echo "${APIGEE_USR}"
 		}}
+    stage('Store Credentials'){
+      steps{
+        echo "Storing Client ID"
+        sh "touch $WORKSPACE/features/support/credentials/client-id.txt"
+        sh "cat ${CLIENT_USR} > $WORKSPACE/features/support/credentials/client-id.txt"
+        echo "Storing Client Secret"
+        sh "touch $WORKSPACE/features/support/credentials/client-secret.txt"
+        sh "cat ${CLIENT_PSW} > $WORKSPACE/features/support/credentials/client-secret.txt"
 		stage('Deploy to Production') {
 			steps {
 				//deploy using maven plugin
