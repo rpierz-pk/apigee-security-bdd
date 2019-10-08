@@ -5,7 +5,7 @@ pipeline {
 		jdk 'OpenJDK8'
 	}
   environment {
-    withCredentials( [usernamePassword( credentialsId:'apigee')])
+    APIGEE = credentials('apigee')
   }
 
 
