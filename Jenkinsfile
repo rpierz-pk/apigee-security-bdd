@@ -4,6 +4,8 @@ pipeline {
 		maven 'M3'
 		jdk 'OpenJDK8'
 	}
+  environment {
+    APIGEE = credentials('jenkins-apigee-creds')
 
 	stages {
 		stage('Initial-Checks'){
@@ -15,7 +17,8 @@ pipeline {
 		stage('Deploy to Production') {
 			steps {
 				//deploy using maven plugin
-				sh "mvn -f bdd-security-app/pom.xml install -Pprod -Dusername=${apigeeUsername} -Dpassword=${apigeePassword} -Dapigee.config.options=update"
+				sh "mvn -f bdd-security-app/pom.xml install -Pprod
+-Dusername=${APIGEE_USR} -Dpassword=${APIGEE_PSW} -Dapigee.config.options=update"
 			}
 		}
 		stage('Integration Tests') {
