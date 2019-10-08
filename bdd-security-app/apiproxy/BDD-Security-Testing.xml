@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="4" name="BDD-Security-Testing">
+<APIProxy revision="5" name="BDD-Security-Testing">
     <Basepaths>/bdd-security-testing</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1570567643079</CreatedAt>
+    <CreatedAt>1570570171206</CreatedAt>
     <CreatedBy>rpierz@prokarma.com</CreatedBy>
     <Description></Description>
     <DisplayName>BDD-Security-Testing</DisplayName>
-    <LastModifiedAt>1570567643079</LastModifiedAt>
+    <LastModifiedAt>1570570171206</LastModifiedAt>
     <LastModifiedBy>rpierz@prokarma.com</LastModifiedBy>
-    <ManifestVersion>SHA-512:dd790828a869dcbd4d5ad83c1bc73b16d990cb10e16c1418f79b41fcee460951aee6ac312b576725dec6ed916e55f1d06714640476cbb4a02ab8f75e2eccb61d</ManifestVersion>
+    <ManifestVersion>SHA-512:17278328b82a52cf9ee84f0db77cf8947497bed92910bcd07831c6dfe1e22ce416937686717092607246a0147974421dfadaf9a215d7a61036007fb768354e6e</ManifestVersion>
     <Policies>
+        <Policy>Generate-Access-Token</Policy>
+        <Policy>Log-API-Key</Policy>
+        <Policy>SQL-Injection-Protection</Policy>
         <Policy>Verify-API-Key</Policy>
+        <Policy>Verify-Access-Token</Policy>
+        <Policy>Verify-Oauth-Scope</Policy>
     </Policies>
     <ProxyEndpoints>
         <ProxyEndpoint>default</ProxyEndpoint>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RegularExpressionProtection async="false" continueOnError="false" enabled="true" name="SQL-Injection-Protection">
+    <DisplayName>SQL Injection Protection</DisplayName>
+    <Properties/>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    <QueryParam name="sqlcode">
+        <Pattern>[\s]*((delete)|(exec)|(drop\s*table)|(insert)|(shutdown)|(update)|(\bor\b))</Pattern>
+    </QueryParam>
+</RegularExpressionProtection>

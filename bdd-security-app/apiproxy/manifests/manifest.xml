@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest name="manifest">
     <Policies>
+        <VersionInfo resourceName="Generate-Access-Token" version="SHA-512:96536f361d8e006fd7afe43ce74d57802d5092a730a0071747c9788d3cf2eb309c3b82d4f7a4d65b032bf7577ad6126c87bc5179ab21bbbdaf393597a8b1b355"/>
+        <VersionInfo resourceName="Log-API-Key" version="SHA-512:e47e63d1093f19f0472c83fb9a2fcbf5bd263e3f332c1eeddf3b8d16e7b344aa6c73273cf7beea4ab095e3198f17e79cc9a3d4cd0d3787e658dcd48f864fcc65"/>
+        <VersionInfo resourceName="SQL-Injection-Protection" version="SHA-512:7d9115eac930e1b272cc28976006da107232c547179b6d22687dcd52ea83aabfbebc77421b64da59a74ed112dc97781a8c51ad35fc0567a2b277f021a8f2f6c1"/>
         <VersionInfo resourceName="Verify-API-Key" version="SHA-512:ae278d3413af05c5a7e4e77ddcafb4b18dc68ece51b40805f9608109c3bf785c127b4200f319b6343e112a36a419b056e3a392a173ea6a0393d3bbf70ff3af3f"/>
+        <VersionInfo resourceName="Verify-Access-Token" version="SHA-512:f1d36c11ee04d57b1bb94c49357cdfc3a93651b6f554e81a000fad0b94d39f14e4d2a4c679eadb88f6e900f8a83fe2ecb1d8c1a910c2235932e00cdac92d3feb"/>
+        <VersionInfo resourceName="Verify-Oauth-Scope" version="SHA-512:dd101be9d63f855d56d764de3669595007b4576b213270d46756d857db8804ea55fc6d2c62c5f5639cbe001bd31fb3e5728f7bce29f78eda75e25ab5ed5fc3c1"/>
     </Policies>
     <ProxyEndpoints>
-        <VersionInfo resourceName="default" version="SHA-512:b7284d78fd312f8425f0b60be53582d606196c32dc364dd33d1cb31031183adea7d5a508889e9faca00c3cbbe31de1d55cddf298d61dd756f1f6a257a1101711"/>
+        <VersionInfo resourceName="default" version="SHA-512:06bdbc508c998a0c2504dd3c6da557cae75d4ec8fa5f111eee56381f897fe4b4f7d78d50e4da48c8abdbce85f2f196b9d62389dc7d09e28a234cbb16ba6c38c8"/>
     </ProxyEndpoints>
     <Resources/>
     <SharedFlows/>

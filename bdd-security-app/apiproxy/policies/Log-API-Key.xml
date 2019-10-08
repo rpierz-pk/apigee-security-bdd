@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ConnectorCallout async="false" continueOnError="true" enabled="true" name="Log-API-Key">
+    <DisplayName>Log API Key</DisplayName>
+    <Connector>bdd-security-logging</Connector>
+    <Action>log</Action>
+    <Input><![CDATA[
+{
+  "logName": "Apickli AutoLog -- Verify API Key",
+  "metadata": {
+    "resource": {
+      "type": "global",
+      "labels": {
+        "project_id": "bdd-security-testing"
+      }
+    }
+  },
+  "message": {
+    "Action": "{request.verb}",
+    "ClientIP": "{client.ip}",
+    "Source": "{request.header.User-Agent}",
+    "API Key": "{request.queryparam.apikey}",
+    "requestPayload": {request.content}
+  }
+}
+     ]]></Input>
+    <Output>context-variable-name</Output>
+</ConnectorCallout><!-- 
+Input JSON Schema for package=gcp-stackdriver-logging version=1.3.7
+{"type":"object","properties":{"logName":{"type":"string"},"metadata":{"type":"object","description":"https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry"},"message":{"type":["string","object"],"description":"The data to use as the value for this log entry."}},"required":["logName","message"]}
+-->
+<!-- 
+Output JSON Schema for package=gcp-stackdriver-logging version=1.3.7
+{"type":"object","properties":{"content":{"type":"string"}},"required":[]}
+-->
