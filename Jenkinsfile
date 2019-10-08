@@ -44,7 +44,6 @@ pipeline {
 
 					sh "cd $WORKSPACE"
           sh "cat reports.json"
-					build job: 'cucumber-report'
 				}
 			}
 		}
