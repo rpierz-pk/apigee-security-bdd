@@ -6,6 +6,7 @@ pipeline {
 	}
   environment {
     APIGEE = credentials('jenkins-apigee-creds')
+  }
 
 	stages {
 		stage('Initial-Checks'){
