@@ -19,12 +19,11 @@ pipeline {
     stage('Store Credentials'){
       steps{
         echo "$WORKSPACE"
-        cd $WORKSPACE
-        sh "rm -rf features/support/credentials"
-        sh "mkdir features/support/credentials"
+        sh "rm -rf $WORKSPACE/features/support/credentials"
+        sh "mkdir $WORKSPACE/features/support/credentials"
         echo "Storing Client Id"
-        sh "touch features/support/credentials/client-id.txt"
-        writeFile(file: 'features/support/credentials/client-id.txt', text: "testData")
+        sh "touch $WORKSPACE/features/support/credentials/client-id.txt"
+        writeFile(file: '$WORKSPACE/features/support/credentials/client-id.txt', text: "testData")
         
         echo "Storing Client Secret"
         sh "touch $WORKSPACE/features/support/credentials/client-secret.txt"
