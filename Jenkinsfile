@@ -10,7 +10,7 @@ pipeline {
 			steps{
         echo "Checking npm version"
 				sh "npm -v"
-        echo "Checking maven version"
+        echo "Checking maven version in $WORKSPACE. Java is at $JAVA_HOME"
 				sh "mvn -v"
         echo "Echoing apigee username"
 				echo $apigeeUsername
