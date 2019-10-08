@@ -19,12 +19,14 @@ pipeline {
 		}}
     stage('Store Credentials'){
       steps{
-        echo "Storing Client ID"
-        mkdir $WORKSPACE/features/support/credentials
-        sh "cat ${CLIENT_USR} > $WORKSPACE/features/support/credentials/client-id.txt"
-        echo "Storing Client Secret"
-        sh "cat ${CLIENT_PSW} > $WORKSPACE/features/support/credentials/client-secret.txt"
-		  }
+        script{
+          echo "Storing Client ID"
+          mkdir $WORKSPACE/features/support/credentials
+          sh "cat ${CLIENT_USR} > $WORKSPACE/features/support/credentials/client-id.txt"
+          echo "Storing Client Secret"
+          sh "cat ${CLIENT_PSW} > $WORKSPACE/features/support/credentials/client-secret.txt"
+		    }
+      }
     }
     stage('Deploy to Production') {
 			steps {
