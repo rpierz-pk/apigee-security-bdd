@@ -1,6 +1,5 @@
 pipeline {
-	env.JAVA_HOME = tool 'JDK-1.8'
-  agent any
+	agent any
 	tools {
 		maven '/usr/bin/mvn'
 		jdk '/usr/bin/java'
