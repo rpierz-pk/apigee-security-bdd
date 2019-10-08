@@ -20,6 +20,7 @@ pipeline {
     stage('Store Credentials'){
       steps{
         echo "$WORKSPACE"
+        sh "mkdir $WORKSPACE/features/support/credentials"
         echo "Storing Client Id"
         sh "cat ${CLIENT_USR} > $WORKSPACE/features/support/credentials/client-id.txt"
         echo "Storing Client Secret"
