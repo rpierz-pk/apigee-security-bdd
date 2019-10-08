@@ -22,10 +22,10 @@ pipeline {
         sh "rm -rf $WORKSPACE/features/support/credentials"
         sh "mkdir $WORKSPACE/features/support/credentials"
         echo "Storing Client Id"
-        writeFile(file: '$WORKSPACE/features/support/credentials/client-id.txt', text: '${CLIENT_USR}')
+        writeFile file: '$WORKSPACE/features/support/credentials/client-id.txt', text: '${CLIENT_USR}'
         
         echo "Storing Client Secret"
-        writeFile file: '$WORKSPACE/features/support/credentials/client-secret.txt', text: '${CLIENT_PSW}')
+        writeFile file: '$WORKSPACE/features/support/credentials/client-secret.txt', text: '${CLIENT_PSW}'
       }
     }
 //    stage('Deploy to Production') {
