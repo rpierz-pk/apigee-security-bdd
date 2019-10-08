@@ -22,9 +22,9 @@ pipeline {
         script{
           echo "Storing Client ID"
           mkdir $WORKSPACE/features/support/credentials
-          sh "cat ${CLIENT_USR} > $WORKSPACE/features/support/credentials/client-id.txt"
+          sh "cat ${CLIENT_USR} > ${WORKSPACE}/features/support/credentials/client-id.txt"
           echo "Storing Client Secret"
-          sh "cat ${CLIENT_PSW} > $WORKSPACE/features/support/credentials/client-secret.txt"
+          sh "cat ${CLIENT_PSW} > ${WORKSPACE}/features/support/credentials/client-secret.txt"
 		    }
       }
     }
