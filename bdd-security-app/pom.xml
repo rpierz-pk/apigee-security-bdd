@@ -10,6 +10,6 @@
     <groupId>com.prokarma</groupId>
     <artifactId>bdd-security-app</artifactId>
     <version>1.0</version>
-    <name>BDD-Security</name>
+    <name>BDD-Security-Testing</name>
     <packaging>pom</packaging>
 </project>

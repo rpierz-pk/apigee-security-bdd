@@ -29,12 +29,12 @@ pipeline {
         writeFile file: 'features/support/credentials/client-secret.txt', text: "${CLIENT_PSW}"
       }
     }
-//    stage('Deploy to Production') {
-//			steps {
-//				//deploy using maven plugin
-//				sh "mvn -f bdd-security-app/pom.xml install -Pprod -Dusername=${APIGEE_USR} -Dpassword=${APIGEE_PSW} -Dapigee.config.options=update"
-//			}
-//		}
+    stage('Deploy to Production') {
+			steps {
+				//deploy using maven plugin
+  			sh "mvn -f bdd-security-app/pom.xml install -Pprod -Dusername=${APIGEE_USR} -Dpassword=${APIGEE_PSW} -Dapigee.config.options=update"
+			}
+		}
 		stage('Integration Tests') {
 			steps {
 				script {
@@ -44,7 +44,6 @@ pipeline {
 
 					sh "cd $WORKSPACE"
           sh "cat reports.json"
-					cucumber fileIncludePattern: 'reports.json'
 					build job: 'cucumber-report'
 				}
 			}
