@@ -18,8 +18,8 @@ pipeline {
 		}}
     stage('Store Credentials'){
       steps{
-        cd $WORKSPACE
         echo "$WORKSPACE"
+        cd $WORKSPACE
         sh "rm -rf features/support/credentials"
         sh "mkdir features/support/credentials"
         echo "Storing Client Id"
