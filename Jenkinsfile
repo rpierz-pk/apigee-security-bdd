@@ -5,8 +5,9 @@ pipeline {
 		jdk 'OpenJDK8'
 	}
   environment {
-    APIGEE = credentials('jenkins-apigee-creds')
+    withCredentials( [usernamePassword( credentialsId:'apigee')])
   }
+
 
 	stages {
 		stage('Initial-Checks'){
