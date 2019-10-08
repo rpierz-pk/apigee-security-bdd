@@ -25,7 +25,9 @@ pipeline {
         echo "Storing Client Secret"
         sh "touch $WORKSPACE/features/support/credentials/client-secret.txt"
         sh "cat ${CLIENT_PSW} > $WORKSPACE/features/support/credentials/client-secret.txt"
-		stage('Deploy to Production') {
+		  }
+    }
+    stage('Deploy to Production') {
 			steps {
 				//deploy using maven plugin
 				sh "mvn -f bdd-security-app/pom.xml install -Pprod -Dusername=${APIGEE_USR} -Dpassword=${APIGEE_PSW} -Dapigee.config.options=update"
