@@ -37,13 +37,15 @@ pipeline {
     stage('Integration Tests') {
       steps {
         script {
-          sh "rm -rf node_modules/*/.git/"
-          sh "cd $WORKSPACE && npm install"
-          sh "cd $WORKSPACE && npm test || true"
-
-          sh "cd $WORKSPACE"
-          sh "cat reports.json"
-          cucumber fileIncludePattern: 'reports.json'
+          try {
+            sh "rm -rf node_modules/*/.git/"
+            sh "cd $WORKSPACE && npm install"
+            sh "cd $WORKSPACE && npm test || true"
+          } catch(e){
+            throw e;
+          } finally {
+            sh "cd $WORKSPACE"
+            cucumber fileIncludePattern: 'reports.json'
         }
       }
     }
