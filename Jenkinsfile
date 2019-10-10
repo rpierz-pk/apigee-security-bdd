@@ -46,8 +46,9 @@ pipeline {
           } finally {
             sh "cd $WORKSPACE"
             cucumber fileIncludePattern: 'reports.json'
+          }
         }
       }
     }
   }
-}
+}`
