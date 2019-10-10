@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js features/security-test.feature -f pretty:reports.html"
+    "test": "cucumber-js features/security-test.feature -f json:reports.json"
   },
   "repository": {
     "type": "git",
