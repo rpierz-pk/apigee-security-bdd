@@ -43,7 +43,7 @@ pipeline {
 
           sh "cd $WORKSPACE"
           sh "cat reports.json"
-          cucumber 'reports.json'
+          cucumber fileIncludePattern: 'reports.json'
         }
       }
     }
