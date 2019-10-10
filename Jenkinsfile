@@ -39,11 +39,12 @@ pipeline {
         script {
           sh "rm -rf node_modules/*/.git/"
           sh "cd $WORKSPACE && npm install"
-          sh "cd $WORKSPACE && npm test || true"
+          sh "cd $WORKSPACE && npm test"
 
           sh "cd $WORKSPACE"
           sh "cat reports.json"
           cucumber 'reports.json'
+          echo "Pipeline completed."
         }
       }
     }
