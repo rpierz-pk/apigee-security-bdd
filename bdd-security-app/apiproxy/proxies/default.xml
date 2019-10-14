@@ -76,7 +76,7 @@
         </Flow>
     </Flows>
     <HTTPProxyConnection>
-        <BasePath>/bdd-security-testing</BasePath>
+        <BasePath>/bdd-security</BasePath>
         <Properties/>
         <VirtualHost>default</VirtualHost>
         <VirtualHost>secure</VirtualHost>

@@ -45,7 +45,7 @@ pipeline {
             throw e;
           } finally {
             sh "cd $WORKSPACE"
-            cucumber fileIncludePattern: '**/reports.json'
+            cucumber fileIncludePattern: 'reports.json'
           }
         }
       }

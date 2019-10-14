@@ -6,7 +6,7 @@ const fs = require('fs');
 
 
 Before(function() {
-  this.apickli = new apickli.Apickli('http', 'rpierz-eval-test.apigee.net/bdd-security-testing');
+  this.apickli = new apickli.Apickli('http', 'rpierz-eval-test.apigee.net/bdd-security');
   this.apickli.addRequestHeader('Cache-Control', 'no-cache');
   
   
