@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/rpierz-pk/apigee-security-bdd#readme",
   "devDependencies": {
-    "cucumber": "^6.0.2"
+    "cucumber": "^4.2.1"
   }
 }
